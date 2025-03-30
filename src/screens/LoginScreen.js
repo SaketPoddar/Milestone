@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Image, StyleSheet, Alert } from "react-native";
 import { moderateScale } from "react-native-size-matters"; // Import moderateScale
 
 const LoginScreen = ({ navigation }) => {
@@ -19,7 +19,8 @@ const LoginScreen = ({ navigation }) => {
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => navigation.navigate("ForgotPassword")}>
+      
+      <TouchableOpacity onPress={() => Alert.alert("Forgot Password", "This feature is not available yet.")}>
         <Text style={styles.forgotPassword}>Forgot Password?</Text>
       </TouchableOpacity>
     </View>
