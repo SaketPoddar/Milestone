@@ -19,7 +19,7 @@ const SignInScreen = () => {
           style={styles.logo}
         />
         <Text style={styles.title}>Milestone</Text>
-        <Text style={styles.subtitle}>1MB data can save your billions' valuable relationships.</Text>
+        <Text style={styles.subtitle}>A single megabyte can protect a lifetime of memories and connections.</Text>
       </View>
 
       <View style={styles.formContainer}>
