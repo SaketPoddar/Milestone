@@ -32,7 +32,7 @@ const ProfileScreen = () => {
           <Text style={styles.label}>Birthday</Text>
           <TextInput
             style={styles.input}
-            placeholder="DD/MM"
+            placeholder="DD/MM/YY"
             placeholderTextColor="#9CA3AF"
           />
 
