@@ -60,7 +60,7 @@ const MembersScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Add Family Members</Text>
+      <Text style={styles.title}>Members Screen</Text>
       <FlatList
         data={members}
         keyExtractor={(item) => item.id}
