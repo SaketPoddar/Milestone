@@ -3,6 +3,8 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView } from 
 import { useNavigation } from "@react-navigation/native";
 import { moderateScale } from "react-native-size-matters";
 
+//saket check changes
+
 const ProfileScreen = () => {
   const navigation = useNavigation();
 
@@ -11,24 +13,43 @@ const ProfileScreen = () => {
   };
 
   const handleBack = () => {
-    navigation.goBack(); // Navigate back
+    navigation.goBack();
   };
 
   return (
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       <View style={styles.container}>
-        <View style={styles.card}>
-          <Text style={styles.sectionTitle}>Profile Information</Text>
-          <TextInput style={styles.input} placeholder="Name" placeholderTextColor="#9ca3af" value="Saket" />
-          <TextInput style={styles.input} placeholder="Birthday (DD/MM)" placeholderTextColor="#9ca3af" />
-          <TextInput style={styles.input} placeholder="Contact No." keyboardType="phone-pad" placeholderTextColor="#9ca3af" />
+        <Text style={styles.header}>Your Profile</Text>
 
-          <TouchableOpacity style={styles.buttonPrimary} onPress={handleSubmit}>
-            <Text style={styles.buttonText}>Submit</Text>
+        <View style={styles.card}>
+          <Text style={styles.label}>Full Name</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter your name"
+            placeholderTextColor="#9CA3AF"
+          />
+
+          <Text style={styles.label}>Birthday</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="DD/MM"
+            placeholderTextColor="#9CA3AF"
+          />
+
+          <Text style={styles.label}>Contact Number</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Enter phone number"
+            placeholderTextColor="#9CA3AF"
+            keyboardType="phone-pad"
+          />
+
+          <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
+            <Text style={styles.submitText}>Continue</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.buttonSecondary} onPress={handleBack}>
-            <Text style={styles.buttonSecondaryText}>Back</Text>
+          <TouchableOpacity style={styles.backButton} onPress={handleBack}>
+            <Text style={styles.backText}>Go Back</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -39,68 +60,69 @@ const ProfileScreen = () => {
 const styles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
+    backgroundColor: "#111827",
   },
   container: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#111827",
-    paddingVertical: moderateScale(40),
+    paddingTop: moderateScale(50),
+    paddingBottom: moderateScale(30),
+  },
+  header: {
+    fontSize: moderateScale(26),
+    fontWeight: "bold",
+    color: "#F9FAFB",
+    marginBottom: moderateScale(30),
   },
   card: {
-    backgroundColor: "#1f2937",
-    padding: moderateScale(25),
-    borderRadius: moderateScale(12),
+    width: "88%",
+    backgroundColor: "#1F2937",
+    borderRadius: moderateScale(14),
+    padding: moderateScale(20),
     shadowColor: "#000",
-    shadowOffset: { width: 0, height: moderateScale(4) },
     shadowOpacity: 0.2,
-    shadowRadius: moderateScale(5),
-    elevation: moderateScale(6),
-    width: "85%",
-    alignItems: "center",
+    shadowRadius: 6,
+    shadowOffset: { width: 0, height: 3 },
+    elevation: 5,
   },
-  sectionTitle: {
-    fontSize: moderateScale(22),
-    fontWeight: "bold",
-    marginBottom: moderateScale(15),
-    color: "#f9fafb",
+  label: {
+    fontSize: moderateScale(14),
+    color: "#D1D5DB",
+    marginBottom: moderateScale(6),
+    marginTop: moderateScale(10),
   },
   input: {
     width: "100%",
-    padding: moderateScale(12),
-    borderWidth: 1,
-    borderColor: "#374151",
+    paddingVertical: moderateScale(10),
+    paddingHorizontal: moderateScale(12),
+    backgroundColor: "#374151",
     borderRadius: moderateScale(8),
-    marginBottom: moderateScale(12),
+    color: "#F9FAFB",
     fontSize: moderateScale(16),
-    backgroundColor: "#374151",
-    color: "#f9fafb",
   },
-  buttonPrimary: {
-    backgroundColor: "#2563eb",
+  submitButton: {
+    backgroundColor: "#3B82F6",
     paddingVertical: moderateScale(14),
     borderRadius: moderateScale(8),
     alignItems: "center",
-    width: "100%",
-    marginTop: moderateScale(15),
+    marginTop: moderateScale(24),
   },
-  buttonSecondary: {
-    backgroundColor: "#374151",
-    paddingVertical: moderateScale(14),
+  submitText: {
+    color: "#FFFFFF",
+    fontSize: moderateScale(18),
+    fontWeight: "bold",
+  },
+  backButton: {
+    paddingVertical: moderateScale(12),
     borderRadius: moderateScale(8),
     alignItems: "center",
-    width: "100%",
-    marginTop: moderateScale(10),
+    marginTop: moderateScale(12),
+    backgroundColor: "#4B5563",
   },
-  buttonText: {
-    color: "#f9fafb",
-    fontSize: moderateScale(18),
-    fontWeight: "bold",
-  },
-  buttonSecondaryText: {
-    color: "#f9fafb",
-    fontSize: moderateScale(18),
-    fontWeight: "bold",
+  backText: {
+    color: "#F9FAFB",
+    fontSize: moderateScale(16),
+    fontWeight: "600",
   },
 });
 
