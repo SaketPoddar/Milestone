@@ -7,10 +7,10 @@ const MembersScreen = () => {
     const navigation = useNavigation();
 
     const [members, setMembers] = useState([
-        { id: '1', name: '', date: '1', month: 'Month', relation: 'Wife' },
-        { id: '2', name: '', date: '1', month: 'Month', relation: 'Mother' },
-        { id: '3', name: '', date: '1', month: 'Month', relation: 'Father' },
-        { id: '4', name: '', date: '1', month: 'Month', relation: 'Friend' },
+        { id: '1', name: '', date: '', month: '', relation: 'Wife' },
+        { id: '2', name: '', date: '', month: '', relation: 'Mother' },
+        { id: '3', name: '', date: '', month: '', relation: 'Father' },
+        { id: '4', name: '', date: '', month: '', relation: 'Friend' },
     ]);
 
     const renderItem = ({ item, index }) => (
